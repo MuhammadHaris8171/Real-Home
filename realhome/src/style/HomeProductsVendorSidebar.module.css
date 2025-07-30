@@ -1,0 +1,45 @@
+.homeProductsVendor{
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.2);
+    height: 10rem;
+    width: 25rem;
+    padding: 1rem 1rem;
+}
+.imgBox{
+    height: 8rem;
+    width: 10rem;
+    margin-right: 1rem;
+}
+.VendorProfileImage{
+    height: 8rem;
+    width: 10rem;
+    object-fit: cover;
+}
+.vendorDetailBox{
+    align-items: center;
+}
+.vendorProfileLink{
+    text-decoration: none !important; 
+  }
+@media all and (max-width:700px) {
+    .homeProductsVendor{
+        box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.2);
+        height: 20rem;
+        width: 55rem;
+        padding: 2.5rem 2rem;
+    }
+    .imgBox{
+        height: 15rem;
+        /* margin-top: 1rem; */
+        width: 15rem;
+        margin-right: 3rem;
+    }
+    .VendorProfileImage{
+        height: 15rem;
+        width: 15rem;
+        object-fit: cover;
+    }
+    .vendorName{
+        font-size: 2.7rem;
+        font-weight: 600;
+    }
+}

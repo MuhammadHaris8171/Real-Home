@@ -1,0 +1,50 @@
+/node_modules
+/realhome/node_modules
+.env*
+/.env*
+/zip*
+/.zip*
+zip*
+*.zip
+.zip*
+/realhome/.env*
+node_modules
+node_modules
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+realhome/node_modules/
+node_modules
+.env*
+/.env*
+realhome/.env*
+realhome/.env*
+realhome/.env.local
+realhome/.env.*.local
+realhome/.env*
+realhome/.env.local
+realhome/.env.*.local
+
+
+
+# Build output
+realhome/dist/
+dist/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
