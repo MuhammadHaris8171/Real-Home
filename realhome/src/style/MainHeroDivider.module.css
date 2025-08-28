@@ -7,7 +7,7 @@
   }
 
   
-  .heroBoxContainer {
+  .heroBoxContainer{
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -16,16 +16,40 @@
 
   }
 
+  .heroBoxContainer:hover{
+  
+  animation: up 1.2s linear;
+  /* top: 0%; */
+}
   .homeProductBackground{
-      transition: all 2s ease-in-out;
-      
+      /* transition: all 2s ease-in-out; */
+      position: relative;
   }
   .homeProductBackground:hover{
-    background: url(/src/assets/images/pexels-rdne-6724529.jpg)  center center/cover;
-   
+    z-index: 1;
+    /* background: url(/src/assets/images/pexels-pavel-danilyuk-7180730.jpg)  center center/cover; */
+   animation: up 1.2s linear;
 }
-
-@keyframes up {
+.homeProductBackground:hover::before{
+    background-image: url("/src/assets/images/pexels-pavel-danilyuk-7180730.jpg");
+} 
+.homeProductBackground::before {
+  content: "";
+  position: absolute;
+  inset: 0;                      /* fill the container */
+  /* background-image: url("/src/assets/images/pexels-pavel-danilyuk-7180730.jpg"); */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);       /* avoid seeing un-blurred edges */
+  /* filter: blur(0.05rem);            */
+  z-index: 0;
+}
+.homeProductBackground:hover .heroBox{
+    animation: down 1.2s linear;
+        bottom: 0%;
+ /* bottom: 0%;  */
+}
+@keyframes up{
   0%{
     top: 90%;
   }
@@ -42,23 +66,62 @@
     top: 0%;
   }
 }
+@keyframes down{
+  0%{
+    bottom: 90%;
+  }
+  25%{
+    bottom: 70%;
+  }
+  50%{
+    bottom: 45%;
+  }
+  75%{
+    bottom: 20%;
+  }
+  100%{
+    bottom: 0%;
+  }
+}
 .realestateBackground{
+  position: relative;
+  /* border: 2px solid blue; */
+  top: 0%;
   /* transition: all 2s ease-in-out; */
   /* top: 90%; */
   /* background: url(/src/assets/images/allison-saeng-vtUUvZP4XCk-unsplash.jpg) center center/cover; */
 }
 .realestateBackground:hover{
-  background: url(/src/assets/images/allison-saeng-vtUUvZP4XCk-unsplash.jpg) center center/cover;
-  animation: up 2s linear 1s;
+  
+  animation: up 1.2s linear;
   /* top: 0%; */
 }
   /* .realestateBackground:hover .heroBox{
     top: 0%;
   } */
-
-  .heroBox {
+.realestateBackground:hover::before{
+    background: url(/src/assets/images/allison-saeng-vtUUvZP4XCk-unsplash.jpg) center center/cover;
+} 
+.realestateBackground::before {
+  content: "";
+  position: absolute;
+  inset: 0;                      /* fill the container */
+  /* background-image: url("/src/assets/images/pexels-pavel-danilyuk-7180730.jpg"); */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);       /* avoid seeing un-blurred edges */
+  /* filter: blur(0.05rem);     */
+  z-index: 0;
+}
+.realestateBackground:hover .heroBox{
+    animation: down 1.2s linear;
+        bottom: 0%;
+ /* bottom: 0%;  */
+}
+  .heroBox{
+    position: absolute;
     width: 50%;
-    bottom: 90%;
+    bottom: 0%;
     height: 100% !important;
     padding: 20px;
     border-radius: 10px;
@@ -87,11 +150,15 @@
   
   .mainHeroBtn {
     /* background-color: rgba(196,153,81,255); */
-    background: linear-gradient(rgb(249, 197, 106), rgb(131, 101, 49));
+    background: linear-gradient(var(--main-primary-color), var(--main-secondary-color),var(--main-tertiary-color));
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+  }
+  .mainHeroBtn:hover{
+background: linear-gradient(var(--main-tertiary-color),var(--main-secondary-color),var(--main-primary-color));
+    
   }
 
   

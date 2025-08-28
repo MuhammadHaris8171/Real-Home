@@ -2,10 +2,16 @@ import React from 'react';
 import SearchBox from './SearchBox';
 import defaultBgImg from '../assets/svg/undraw_for-sale_7qjb.svg';
 import styles from '../style/PageHero.module.css';
+import { useQuery } from '@tanstack/react-query';
 import { PageHeroProps } from './types';
 import QuickSearchLinks from './QuickSearchLinks';
 import axios from 'axios';
 import { useEffect,useState } from 'react';
+
+const fetchQuickSearches = async () => {
+  const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products-by-rating`);
+  return response.data.map((item) => item.productName);
+};
 
 
 // const quickSearches = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products-by-rating`);
@@ -17,25 +23,15 @@ const PageHero: React.FC<PageHeroProps> = ({
   
 }) =>
  {
-  const [quickSearches, setQuickSearches] = useState<string[]>([]);
+   const { data: quickSearches = [], isLoading, isError } = useQuery({
+  queryKey: ['quickSearches'],
+  queryFn: fetchQuickSearches,
+});
 
-  useEffect(() => {
-  const fetchQuickSearches = async () => {
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products-by-rating`);
-      const productNames = response.data.map((item) => item.productName); // 👈 Only keep strings
-      setQuickSearches(productNames);
-    } catch (error) {
-      console.error('Error fetching quick searches:', error);
-    }
-  };
-
-  fetchQuickSearches();
-}, []);
-
-
+  // const [quickSearches, setQuickSearches] = useState<string[]>([]);
+if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Failed to load quick searches.</p>;
   return (
-    
   <section className={`${styles.pageHero} d-flex justify-content-center align-items-center position-relative`}>
     <img src={bgImage} alt="ProHomez" className={`${styles.pageHeroBgImg} position-absolute`} />
     <div className={`container position-relative ${styles.pageHeroContainer}`}>

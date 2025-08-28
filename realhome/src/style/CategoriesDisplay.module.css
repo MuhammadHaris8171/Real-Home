@@ -22,12 +22,12 @@
 .categoriesDisplayBtn:hover{
     color: inherit;
     /* background-color: var(--main-primary-color); */
-    background: linear-gradient(rgb(249, 197, 106), rgb(131, 101, 49));
+    background: linear-gradient(var(--main-tertiary-color),var(--main-secondary-color),var(--main-primary-color));
 }
 .categoryActive{
     /* background: var(--main-primary-color);
     border-color: var(--main-primary-color); */
-    background: linear-gradient(rgb(249, 197, 106), rgb(131, 101, 49));
+    background: linear-gradient(var(--main-primary-color), var(--main-secondary-color),var(--main-tertiary-color));
     font-weight: 600;
 }
 .categoryBox{
@@ -78,10 +78,22 @@
 }
 
 .categoryBox:hover {
+     position: relative;
+  z-index: 1;
     transform: scale(1.05);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px var(--main-tertiary-color);
 }
-
+.categoryBox::before{
+    content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+  filter: blur(8px);
+  z-index: -1;
+}
 .categoryImg {
     width: 100%;
     height: 45vh;

@@ -1,6 +1,6 @@
 import styles from '../style/MainHeroDivider.module.css';
-import homeIllustration from '../assets/images/pexels-amar-saleem-15661-70441.jpg';
-import anotherIllustration from '../assets/images/view-futuristic-light-lamp-design.jpg';
+import homeIllustration from '../assets/images/patrick-tomasso-z8wto8Ugnc4-unsplash.jpg';
+import anotherIllustration from '../assets/images/pexels-enginakyurt-2952666.jpg';
 import { Link } from 'react-router-dom';
 
 function MainHeroDivider() {

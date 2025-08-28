@@ -17,12 +17,12 @@
 .categoriesDisplayBtn:hover {
     color: white;
     /* background-color: var(--main-primary-color); */
-    background: linear-gradient(rgb(249, 197, 106), rgb(131, 101, 49));
+    background: linear-gradient(var(--main-tertiary-color), var(--main-secondary-color),var(--main-primary-color));
 }
 
 .categoryActive {
     /* background: var(--main-primary-color); */
-    background: linear-gradient(rgb(249, 197, 106), rgb(131, 101, 49));
+    background: linear-gradient(var(--main-primary-color), var(--main-secondary-color),var(--main-tertiary-color));
     border-color: linear-gradient(rgb(249, 197, 106), rgb(131, 101, 49));
     font-weight: 600;
 }

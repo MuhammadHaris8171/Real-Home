@@ -6,6 +6,10 @@
     margin: 50px;
 
 }
+.venderContainer{
+    /* border: 2px solid blue; */
+      background-color: color-mix(in srgb, var(--main-secondary-color) 20%, transparent);
+}
 .sliderBtnContainer{
     display: flex;
     justify-content: space-between;

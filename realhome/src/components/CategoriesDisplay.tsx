@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import { categories } from './data';
 
 // ✅ Import images from src/assets/images/
-import livingRoomDecorImg from '../assets/images/beautiful-castle-architecture.jpg';
-import paintImg from '../assets/images/pexels-hatice-baran-153179658-16037011.jpg';
-import artImg from '../assets/images/seductive-blonde-woman-looks-her-bronze-shoulders-while-she.jpg';
-import tilesImg from '../assets/images/modern-bathroom-with-small-space-contemporary-decor.jpg';
-import outdoorLightsImg from '../assets/images/how-is-rich-people-have-supper-prepared-desk-waiting-food-visitors-evening-time.jpg';
-import appliancesImg from '../assets/images/beautiful-kitchen-interior-design.jpg';
+import livingRoomDecorImg from '../assets/images/pexels-heyho-6899542.jpg';
+import paintImg from '../assets/images/pawel-czerwinski-fDzxQVR3J6s-unsplash.jpg';
+import artImg from '../assets/images/akshay-chauhan-zj4pFlVrJoU-unsplash.jpg';
+import tilesImg from '../assets/images/pexels-heyho-7045840.jpg';
+import outdoorLightsImg from '../assets/images/jun-ohashi-_CqINvlz-SM-unsplash.jpg';
+import appliancesImg from '../assets/images/DALL_E-2024-03-12-01.13.43-Create-an-image-showcasing-a-bubble-gum-colored-kitchen-interior-design.webp';
 
-import residentialImg from '../assets/images/modern-spacious-room-with-large-panoramic-window(1).jpg';
-import rentalImg from '../assets/images/360_F_30691356_68PChJ3c7Hw25HZRGXyaJbE3955ubSrY.jpg';
-import luxuryAptImg from '../assets/images/pexels-joao-gustavo-rezende-15265-68389.jpg';
+import residentialImg from '../assets/images/designecologist-2BXdTEaKzuw-unsplash.jpg';
+import rentalImg from '../assets/images/4284558.jpg';
+import luxuryAptImg from '../assets/images/arseniy-mukhachev-NVjDKvGXsuA-unsplash.jpg';
 
 // ✅ Map images to category names
 const categoryImages: Record<string, string> = {

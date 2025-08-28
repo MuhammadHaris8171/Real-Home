@@ -29,7 +29,7 @@ function VendorDisplay() {
     };
 
     return (
-        <div className="container">
+        <div className={`${styles.venderContainer} container`}>
             <div className="row">
                 <div className="col-md-12">
                     <h3 className={`${styles.vendorDisplay} mb-0 text-center`}>Top Rated Vendors</h3>
