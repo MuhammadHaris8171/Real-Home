@@ -34,6 +34,8 @@ console.warn = () => {};
 axios.defaults.baseURL = API_BASE.replace(/\/$/, ''); // Remove trailing slash if present
 
 
+axios.get(`${API_BASE}/hii`)
+
 // Utility function to check authentication
 const isAuthenticated = () => {
   return !!localStorage.getItem('token'); // Checks if a token exists in localStorage
