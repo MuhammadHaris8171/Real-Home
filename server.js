@@ -21,6 +21,7 @@ const allowedOrigins = [
   "https://prohomez.com/login",
   "https://prohomez.com/vendor-registration",
   "https://prohomez.com/vendor-dashboard/customerdata",
+  "https://real-home-sooty.vercel.app",
 ]
 dotenv.config();
 
