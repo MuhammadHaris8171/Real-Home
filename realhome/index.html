@@ -16,7 +16,7 @@
       (function(){
         var p = window.location.pathname;
         if(p !== '/' && p.indexOf('.') === -1){
-          var hashPath = '/#' + p.replace(/^\//, '');
+          var hashPath = '' + p.replace(/^\//, '');
           history.replaceState(null, '', hashPath);
         }
       })();
