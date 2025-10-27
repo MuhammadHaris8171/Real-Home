@@ -185,10 +185,7 @@ const router = createBrowserRouter([
         path:"/vendor-dashboard/vendor/edit/:id",
         element:<ProtectedRoute element={<AdminVendorEditForm />} />,
       },
-      {
-        path: '*',
-        element: <Navigate to="/404.html" replace />,
-      },
+      
     ],
   },
 ]);
