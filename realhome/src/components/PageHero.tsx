@@ -8,11 +8,17 @@ import QuickSearchLinks from './QuickSearchLinks';
 import axios from 'axios';
 import { useEffect,useState } from 'react';
 
-const fetchQuickSearches = async () => {
-  const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products-by-rating`);
-  return response.data.map((item) => item.productName);
-};
+interface Product {
+  id: number;
+  productName: string;
+}
 
+const fetchQuickSearches = async (): Promise<Product[]> => {
+  const response = await axios.get<Product[]>(
+    `${import.meta.env.VITE_API_BASE_URL}/products-by-rating`
+  );
+  return response.data;
+};
 
 // const quickSearches = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products-by-rating`);
 const PageHero: React.FC<PageHeroProps> = ({ 
@@ -23,10 +29,11 @@ const PageHero: React.FC<PageHeroProps> = ({
   
 }) =>
  {
-   const { data: quickSearches = [], isLoading, isError } = useQuery({
+   const { data: quickSearches = [], isLoading, isError } = useQuery<Product[]>({
   queryKey: ['quickSearches'],
   queryFn: fetchQuickSearches,
 });
+
 
   // const [quickSearches, setQuickSearches] = useState<string[]>([]);
 if (isLoading) return <p>Loading...</p>;
@@ -44,7 +51,7 @@ if (isLoading) return <p>Loading...</p>;
             <SearchBox mainCategory="home products" />
               <div className={`${styles.inputQuickSearches}`}>
                 <p className={`${styles.inputQuickSearchPara} py-4`}>
-                  <QuickSearchLinks quickSearches={quickSearches} />
+                  <QuickSearchLinks quickSearches={quickSearches.map(p => p.productName)} />
                 </p>
               </div>
             </div>
